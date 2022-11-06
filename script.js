@@ -37,8 +37,9 @@ const quizData = [
   }
 ]
 
-const questionEl = document.getElementById('question');
 
+const answerELs = document.querySelectorAll('.answer');
+const questionEl = document.getElementById('question');
 
 const a_text = document.getElementById('a_text');
 const b_text = document.getElementById('b_text');
@@ -53,6 +54,7 @@ let score = 0;
 loadQuiz();
 
 function loadQuiz() {
+  deselectAnswers()
   // to print out the quiz questions
   const currentQuizData = quizData[currentQuiz];
 
@@ -67,10 +69,9 @@ function loadQuiz() {
 }
 
 function getSelected(){
-  const answerELs = document.querySelectorAll('.answer');
-
   let answer = undefined;
-  answerELs.forEach(answerEl => {
+
+  answerELs.forEach((answerEl) => {
     if(answerEl.checked) {
       answer = answerEl.id;
     }
@@ -79,28 +80,29 @@ function getSelected(){
   return answer;
 }
 
-
 function deselectAnswers(){
-
+  answerELs.forEach((answerEl) => {
+    answerEl.checked = false;
+  });
 }
 
 submitBtn.addEventListener("click", () => {
   // check to see the answer
-    const answer = getSelected()
+    const answer = getSelected();
 
     console.log(answer)
 
-      if(answer){
-        if(answer === quizData[currentQuiz].correct){
-          score += 1;
+    // console.log(answer);
+        if(answer){
+          if(answer === quizData[currentQuiz].correct){
+            score++;
+          }
+          currentQuiz++;
+          if(currentQuiz < quizData.length) {
+            loadQuiz();
+          } else {
+            //TODO: Show results
+            alert('You Finished!🥂🎉');
+          }
         }
-
-        currentQuiz += 1;
-        if(currentQuiz < quizData.length) {
-          loadQuiz();
-        } else {
-          //TODO: Show results
-          alert('You Finished!🥂🎉');
-        }
-    }
   });
