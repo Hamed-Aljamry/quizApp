@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Kolker+Brush&family=Xanh+Mono&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Kolker+Brush&family=Source+Sans+Pro:wght@200&family=Xanh+Mono&display=swap');
 
 * {
   box-sizing: border-box;
@@ -8,7 +7,7 @@
 
 body {
   background-color: #373b44;
-  font-family: 'Xanh Mono', monospace;
+  font-family: 'Source Sans Pro', sans-serif;
   margin: 0;
   display: flex;
   align-items: center;
@@ -16,11 +15,20 @@ body {
   min-height: 100vh;
 }
 
+h2 {
+  margin: 0;
+  font-weight: bold;
+}
+
+ul li{
+  margin: 1rem 0;
+  font-size: 1.1rem;
+}
 
 .quiz-container {
   background-color: #73c8a9;
   border-radius: 10px;
-  box-shadow: 0 0 10px 2px rgba(100, 100, 100, 0.1);
+  box-shadow: 0 0 10px 2px rgba(16, 242, 163, 0.1);
   width: 450px;
   max-width: 100%;
   overflow: hidden;
@@ -29,6 +37,7 @@ body {
 
 .quizheader {
   padding: 2rem;
+  font-weight: bold;
 }
 
 
