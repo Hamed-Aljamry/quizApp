@@ -48,6 +48,7 @@ const submitBtn = document.getElementById('submit');
 
 
 let currentQuiz = 0;
+let score = 0;
 
 loadQuiz();
 
@@ -65,13 +66,41 @@ function loadQuiz() {
   currentQuiz += 1;
 }
 
-submitBtn.addEventListener("click", () => {
-  currentQuiz += 1;
+function getSelected(){
+  const answerELs = document.querySelectorAll('.answer');
 
-  if(currentQuiz < quizData.length) {
-    loadQuiz();
-  } else {
-    //TODO: Show results
-    alert('You Finished!🥂🎉');
-  }
-});
+  let answer = undefined;
+  answerELs.forEach(answerEl => {
+    if(answerEl.checked) {
+      answer = answerEl.id;
+    }
+  });
+
+  return answer;
+}
+
+
+function deselectAnswers(){
+
+}
+
+submitBtn.addEventListener("click", () => {
+  // check to see the answer
+    const answer = getSelected()
+
+    console.log(answer)
+
+      if(answer){
+        if(answer === quizData[currentQuiz].correct){
+          score += 1;
+        }
+
+        currentQuiz += 1;
+        if(currentQuiz < quizData.length) {
+          loadQuiz();
+        } else {
+          //TODO: Show results
+          alert('You Finished!🥂🎉');
+        }
+    }
+  });

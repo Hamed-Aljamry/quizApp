@@ -25,6 +25,9 @@ ul li{
   font-size: 1.1rem;
 }
 
+ul li label {
+  cursor: pointer;
+}
 .quiz-container {
   background-color: #73c8a9;
   border-radius: 10px;
@@ -33,7 +36,6 @@ ul li{
   max-width: 100%;
   overflow: hidden;
 }
-
 
 .quizheader {
   padding: 2rem;
