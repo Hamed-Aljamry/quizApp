@@ -36,3 +36,7 @@ const quizData = [
     correct: 'd'
   }
 ]
+
+
+
+console.log("hello")
