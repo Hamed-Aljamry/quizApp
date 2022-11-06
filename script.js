@@ -65,8 +65,13 @@ function loadQuiz() {
   currentQuiz += 1;
 }
 
-submitBtn.addEventListener('click', () => {
+submitBtn.addEventListener("click", () => {
   currentQuiz += 1;
 
-  loadQuiz();
+  if(currentQuiz < quizData.length) {
+    loadQuiz();
+  } else {
+    //TODO: Show results
+    alert('You Finished!🥂🎉');
+  }
 });
