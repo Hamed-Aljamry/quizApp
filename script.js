@@ -65,7 +65,7 @@ function loadQuiz() {
   c_text.innerText = currentQuizData.c;
   d_text.innerText = currentQuizData.d;
 
-  currentQuiz += 1;
+  // currentQuiz += 1;
 }
 
 function getSelected(){
@@ -77,6 +77,7 @@ function getSelected(){
     }
   });
 
+  // console.log(answer);
   return answer;
 }
 
@@ -90,9 +91,7 @@ submitBtn.addEventListener("click", () => {
   // check to see the answer
     const answer = getSelected();
 
-    console.log(answer)
-
-    // console.log(answer);
+    // console.log(quizData[currentQuiz])
         if(answer){
           if(answer === quizData[currentQuiz].correct){
             score++;
