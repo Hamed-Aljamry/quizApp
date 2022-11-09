@@ -38,6 +38,7 @@ const quizData = [
 ]
 
 
+const quiz = document.getElementById('quiz');
 const answerELs = document.querySelectorAll('.answer');
 const questionEl = document.getElementById('question');
 
@@ -101,7 +102,7 @@ submitBtn.addEventListener("click", () => {
             loadQuiz();
           } else {
             //TODO: Show results
-            alert('You Finished!🥂🎉');
+            quiz.innerHTML = `You answered ${score}/${quizData.length} questions correctly`
           }
         }
   });
