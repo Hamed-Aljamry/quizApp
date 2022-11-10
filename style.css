@@ -67,3 +67,16 @@ ul {
   background: black;
   transition: 0.5s;
 }
+
+button {
+  background-color: #8e44ad;
+  border: none;
+  color: black;
+  display: block;
+  font-family: inherit;
+  width: 100%;
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
