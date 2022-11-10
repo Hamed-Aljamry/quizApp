@@ -102,7 +102,7 @@ submitBtn.addEventListener("click", () => {
             loadQuiz();
           } else {
             //TODO: Show results
-            quiz.innerHTML = `You answered ${score}/${quizData.length} questions correctly`
+            quiz.innerHTML = `<h2>You answered ${score}/${quizData.length} questions correctly</h2>`
           }
         }
   });
